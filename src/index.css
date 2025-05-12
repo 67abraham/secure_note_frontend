@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: InterVariable, sans-serif;
+  --deepblue-500: #023047;
+  --amber-500: #fb8500;
+  --alabaster-500: #e0e1dd;
+}
+
+.bg-deepblue {
+  background-color: var(--deepblue-500);
+}
+
+.bg-amber {
+  background-color: var(--amber-500);
+}
+
+.bg-alabaster {
+  color: var(--alabaster-50);
+}
+
+/* @utility container {
+  max-width: 100%;
+  position: relative;
+  background-position: center;
+} */
