@@ -19,8 +19,35 @@
   color: var(--alabaster-50);
 }
 
-/* @utility container {
-  max-width: 100%;
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: black;
   position: relative;
-  background-position: center;
-} */
+  margin-right: 30px;
+}
+
+.content {
+  display: inline-flex;
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1;
+  gap: 15px;
+  margin: auto;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 40px;
+  padding: 8px;
+}
+
+.data {
+  width: 300px;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px;
+  background-color: aqua;
+}
