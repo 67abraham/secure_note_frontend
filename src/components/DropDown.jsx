@@ -12,7 +12,10 @@ export const DropDown = () => {
     });
   }
   return (
-    <div className="flex flex-col gap-7 absolute top-14 bg-[#021526] w-40.5 right-[30px] rounded ">
+    <div
+      className="flex flex-col gap-7 absolute top-14 bg-[#021526] w-40.5 right-[30px] rounded z-4"
+      onClick={onclose}
+    >
       <Toaster />
       <ul>
         <li className="text-gray-500 m-2 p-2 border-b-1 border-gray-400">
