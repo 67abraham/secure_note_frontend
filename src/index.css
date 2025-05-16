@@ -74,6 +74,7 @@
   color: #fff;
   cursor: pointer;
   box-sizing: content-box;
+  margin-top: 30px;
 }
 
 .add:hover {
@@ -92,23 +93,116 @@
 
 .overlay {
   position: fixed;
-  background: rgba(31, 31, 75, 0.652);
+  /* background: rgba(168, 168, 205, 0.652); */
   width: 100%;
   height: 100%;
   z-index: 5;
+  overflow: hidden;
 }
 
 .container {
   display: flext;
   left: 60%;
-  top: 40%;
+  top: 50%;
   max-width: 750px;
-  background-color: #d4cfcf;
+  background-color: #ffffff;
   backdrop-filter: blur;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
   position: fixed;
-  height: 300px;
+  height: 400px;
   transform: translate(-50%, -50%);
+  box-sizing: content-box;
+  overflow: hidden;
 }
+
+.modelRight {
+  position: fixed;
+  right: 10px;
+  margin: 7px;
+  padding: 5px;
+}
+
+.modelRight > p {
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 80%;
+  background-color: #b7bbbe7b;
+  padding: 5px;
+  margin: 9px;
+}
+
+.modelData > h2 {
+  text-align: center;
+  margin: 17px;
+  padding: 5px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.tiptap {
+  position: relative;
+  width: 95%;
+  height: 120px;
+  border: 1px solid rgb(197, 191, 191);
+  background: rgb(244, 242, 242);
+  border-radius: 5px;
+  margin: 12px;
+  padding: 5px;
+  place-items: 5px;
+}
+
+.button-group > button {
+  margin: 3px;
+  font-weight: 400;
+  font-size: 15px;
+  cursor: pointer;
+  max-width: 100%;
+  padding-left: 12px;
+
+  color: #fff;
+}
+
+.button-group > button:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.button-group {
+  margin: 9px;
+  padding: 5px;
+  background: #000b11;
+  border-radius: 10px;
+  width: 95%;
+}
+
+.title {
+  margin: 8px;
+  padding: 12px;
+  border: 1px solid rgb(197, 191, 191);
+  background: rgb(244, 242, 242);
+  width: 95%;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.btn {
+  margin: 0 auto;
+  display: flex;
+  padding: 4px;
+  font-weight: bold;
+  background: #000b11;
+  color: #fff;
+  box-sizing: border-box;
+  width: 200px;
+  justify-content: center;
+  height: 40px;
+  cursor: pointer;
+  place-items: center;
+  border-radius: 10px;
+}
+
+/* @media screen and (max-width: 500px) {
+  
+} */

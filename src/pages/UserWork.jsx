@@ -115,7 +115,10 @@ export const UserWork = () => {
           </div>
           <div>
             <div className="w-full bg-amber-500">
-              <h2>Making our idea safe and secure for future implementation</h2>
+              <h2 className="ml-5 text-gray-600 font-bold p-2">
+                Marking Down the Future is the unique way of putting your mind
+                on the path Toward the Future{" "}
+              </h2>
             </div>
             <div className="item">
               {note.map((data) => (
