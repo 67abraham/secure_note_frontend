@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { Axios } from "axios";
 import { toast } from "react-hot-toast";
 
 export async function creatUser(userData) {
@@ -65,27 +65,32 @@ export async function loginData(Data) {
   }
 }
 
-export async function notes() {
+export function logout() {
+  const clear = localStorage.removeItem("jwtToken");
+  delete axios.defaults.headers.common["Authorization"];
+  window.location = "/login_user";
+}
+
+export async function PostContent(contents) {
   try {
     const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
     const token = datatoken.jwtToken;
-    const response = await axios.get(
-      "http://localhost:8080/api/content/list-note",
+    const content = await axios.post(
+      "http://localhost:8080/api/content",
+      contents,
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
     );
-    console.log(token);
-  } catch (e) {
-    toast.error("fail");
-    window.location = "/login_user";
-  }
-}
+    const da = content.data;
 
-export function logout() {
-  const clear = localStorage.removeItem("jwtToken");
-  delete axios.defaults.headers.common["Authorization"];
-  window.location = "/login_user";
+    if (content.data) {
+      toast.success("Created");
+    }
+    return content.data;
+  } catch {
+    toast.error("Fail to Create Plane");
+  }
 }

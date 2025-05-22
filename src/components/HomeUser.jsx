@@ -15,7 +15,7 @@ export const HomeUser = () => {
 
   //tryig the new branch
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden stickey">
       <div className=" bg-[#021526] p-3 shadow-md">
         <div className="absolute left-[20px] flex ">
           <svg
@@ -51,10 +51,10 @@ export const HomeUser = () => {
             Projects
           </a>
           <a
-            href="#"
+            href="/user_dashboard"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
           >
-            Calendar
+            Dashboard
           </a>
           <div className=" flex absolute right-60 space-x-4 mt-0.5">
             <button
@@ -79,6 +79,12 @@ export const HomeUser = () => {
         </div>
       </div>
       {openDrop && <DropDown />}
+      <div className="w-full bg-amber-500 text-center">
+        <h2 className="ml-5 text-gray-600 font-bold p-2">
+          Marking Down the Future is the unique way of putting your mind on the
+          path Toward the Future{" "}
+        </h2>
+      </div>
     </div>
   );
 };

@@ -20,7 +20,7 @@
 }
 
 .sidebar {
-  width: 500px;
+  width: 200px;
   height: 100dvh;
   background-color: #023047;
   position: relative;
@@ -47,10 +47,19 @@
 
 .data {
   width: 300px;
+  height: 210px;
   padding: 12px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: aqua;
+  overflow: hidden;
+  left: 30%;
+  transition: background 0.3s;
+}
+
+.data:hover {
+  background: #2928285c;
+  cursor: pointer;
 }
 
 .button {
@@ -74,7 +83,7 @@
   color: #fff;
   cursor: pointer;
   box-sizing: content-box;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .add:hover {
@@ -105,16 +114,26 @@
   left: 60%;
   top: 50%;
   max-width: 750px;
+  max-height: 700px;
   background-color: #ffffff;
   backdrop-filter: blur;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
   position: fixed;
-  height: 400px;
   transform: translate(-50%, -50%);
   box-sizing: content-box;
   overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: 10px;
+}
+
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #023047;
 }
 
 .modelRight {
@@ -144,7 +163,7 @@
 .tiptap {
   position: relative;
   width: 95%;
-  height: 120px;
+  /* height: 120px; */
   border: 1px solid rgb(197, 191, 191);
   background: rgb(244, 242, 242);
   border-radius: 5px;
@@ -188,7 +207,7 @@
 }
 
 .btn {
-  margin: 0 auto;
+  margin: 0 auto 20px;
   display: flex;
   padding: 4px;
   font-weight: bold;
@@ -201,6 +220,58 @@
   cursor: pointer;
   place-items: center;
   border-radius: 10px;
+  bottom: 12px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  font-size: 25px;
+  color: #023047;
+  font-weight: bold;
+}
+
+.backbtn {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.blocks {
+  display: inline-block;
+  margin: 18px;
+  padding: 7px;
+}
+
+.blocks > button {
+  display: inline-block;
+  margin: 12px;
+  padding: 9px;
+  border-radius: 10px;
+  outline: 1px solid gray;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  color: #023047;
+}
+.blocks > button:hover {
+  text-decoration: underline;
+}
+
+.plan {
+  display: block;
+  justify-content: center;
+  max-width: 100%;
+  margin: 40px;
+  padding: 12px;
+  outline: 2px solid gray;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* @media screen and (max-width: 500px) {

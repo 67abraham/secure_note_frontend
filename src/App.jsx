@@ -4,7 +4,8 @@ import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Signin } from "./pages/Signin";
 import { UserWork } from "./pages/UserWork";
-import { Quills } from "./components/Quill";
+import { SinglePlan } from "./components/SinglePlan";
+import { EditContent } from "./components/EditContent";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <Route path="/register_user" element={<Login />} />
       <Route path="/login_user" element={<Signin />} />
       <Route path="/user_dashboard" element={<UserWork />} />
+      <Route path="/user_dashboard/:id" element={<SinglePlan />} />
+      <Route path="/edit_content/:con_id" element={<EditContent />} />
     </Routes>
   );
 }

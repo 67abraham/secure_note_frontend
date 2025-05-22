@@ -6,7 +6,11 @@ import Heading from "@tiptap/extension-heading";
 import TextAlign from "@tiptap/extension-text-align";
 import Highlight from "@tiptap/extension-highlight";
 import Underline from "@tiptap/extension-underline";
+import Placeholder from "@tiptap/extension-placeholder";
 import { QMenu } from "./QMenu";
+import { PostContent } from "../utils/axio";
+import toast, { Toaster } from "react-hot-toast";
+import { redirect } from "react-router-dom";
 
 export const Quills = () => {
   const [noteContent, setNoteContent] = useState("");
@@ -14,12 +18,20 @@ export const Quills = () => {
 
   const onChange = () => {
     const post = { title, noteContent };
-    console.log(post);
+    toast.promise(PostContent(post), {
+      loading: "Please wait...",
+      success: "Done, Note Created",
+    });
+    redirect("/user_dashboard");
   };
+  // window.location = "/user_dashboard";
 
   const editor = useEditor({
     extensions: [
       StarterKit,
+      Placeholder.configure({
+        placeholder: "write content here.....",
+      }),
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
@@ -34,6 +46,8 @@ export const Quills = () => {
       attributes: {
         class: "tiptap",
       },
+      scrollThreshold: 80,
+      scrollMargin: 80,
     },
     onUpdate: ({ editor }) => {
       setNoteContent(editor.getHTML());
@@ -42,6 +56,7 @@ export const Quills = () => {
 
   return (
     <div>
+      <Toaster />
       <input
         type="text"
         className="title"
