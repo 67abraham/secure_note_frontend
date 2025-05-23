@@ -10,7 +10,6 @@ import Placeholder from "@tiptap/extension-placeholder";
 import { QMenu } from "./QMenu";
 import { PostContent } from "../utils/axio";
 import toast, { Toaster } from "react-hot-toast";
-import { redirect } from "react-router-dom";
 
 export const Quills = () => {
   const [noteContent, setNoteContent] = useState("");
@@ -22,7 +21,7 @@ export const Quills = () => {
       loading: "Please wait...",
       success: "Done, Note Created",
     });
-    redirect("/user_dashboard");
+    if (toast.success) window.location = "/user_dashboard";
   };
   // window.location = "/user_dashboard";
 

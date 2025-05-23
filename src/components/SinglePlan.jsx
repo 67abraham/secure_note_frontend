@@ -36,7 +36,7 @@ export function SinglePlan() {
 
   useEffect(() => {
     singleData();
-  }, [id]);
+  }, []);
 
   async function deleteData() {
     try {
