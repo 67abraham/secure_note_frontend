@@ -106,15 +106,22 @@ export const UserWork = () => {
             <div className="item">
               {note.length > 0 ? (
                 note.map((data) => (
-                  <Link to={`/user_dashboard/${data.noteId}`}>
-                    <div key={data.noteId} className="data">
-                      <h1 className="ml-3 p-2 font-bold text-xl">
-                        {data.title}
-                      </h1>
-                      <p>{data.dateCreatedAt}</p>
-                      {parse(data.noteContent)}
+                  <div key={data.noteId} className="data">
+                    <Link to={`/user_dashboard/${data.noteId}`}>
+                      <div className="dataCont">
+                        <h1 className="ml-3 p-2 font-bold text-xl">
+                          {data.title}
+                        </h1>
+                        <p className="w-full text-gray-400 border-b text-m mb-3">
+                          {data.dateCreatedAt}
+                        </p>
+                        <div className="cont">{parse(data.noteContent)}</div>
+                      </div>
+                    </Link>
+                    <div className="click">
+                      <h2>view</h2>
                     </div>
-                  </Link>
+                  </div>
                 ))
               ) : (
                 <h1 className="loading">{loading}</h1>

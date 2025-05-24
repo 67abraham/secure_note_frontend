@@ -51,7 +51,7 @@ export function SinglePlan() {
         }
       );
       if (delecontent.data) {
-        toast.success("delete complete");
+        toast.success("Delete complete");
         window.location = "/user_dashboard";
       }
     } catch (error) {

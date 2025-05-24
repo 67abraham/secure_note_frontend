@@ -2,13 +2,14 @@ import React from "react";
 import { HomeLagout } from "../components/HomeLagout";
 import handWriting from "../assets/hand.png";
 import { useNavigate } from "react-router-dom";
+import { Foster } from "../components/Foster";
 
 export const Home = () => {
   const nagivate = useNavigate();
   return (
-    <div className="w-screen h-screen relative overflow-hidden">
+    <div className="w-screen relative mainHome">
       <HomeLagout />
-      <div className="bg-[#021a37] h-lvh relative ">
+      <div className="bg-[#021a37] home relative ">
         <div className="flex place-content-center">
           <div className=" relative top-40">
             <h1 className="text-white text-7xl">
@@ -80,6 +81,14 @@ export const Home = () => {
           </div>
         </div>
       </div>
+      <div className="spir">
+        <h2>
+          A dream written down with a date become a goal. A goal broken down
+          into steps becomes a plan. Aplan backed by action makes your dreams
+          come true.
+        </h2>
+      </div>
+      <Foster />
     </div>
   );
 };

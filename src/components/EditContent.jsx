@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { HomeUser } from "./HomeUser";
 import axios from "axios";
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -18,8 +18,8 @@ export const EditContent = () => {
   const [editTitle, setEditTitle] = useState("");
   const [editCon, setEditCon] = useState("<p>Loading here</p>");
   const [title, setTitle] = useState("");
+  const [noteContent, setNoteContent] = useState("");
   const cont = DOMPurify.sanitize(editCon.noteContent);
-  console.log(cont);
 
   async function singleData() {
     try {
@@ -39,7 +39,7 @@ export const EditContent = () => {
       }
     } catch (error) {
       console.error(error);
-      //   window.location = "/login_user";
+      window.location = "/login_user";
     }
   }
 
@@ -51,6 +51,25 @@ export const EditContent = () => {
     editor.commands.insertContent(cont);
   }, [cont]);
 
+  async function sendEditData(data) {
+    console.log("fuctionCheck: " + data);
+    try {
+      const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
+      const token = datatoken.jwtToken;
+      const content = await axios.put(
+        `http://localhost:8080/api/content/${con_id}`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "text/plain",
+          },
+        }
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  }
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -73,26 +92,59 @@ export const EditContent = () => {
       scrollMargin: 80,
     },
     onUpdate: ({ editor }) => {
-      //   setNoteContent(editor.getHTML());
+      setNoteContent(editor.getHTML());
     },
   });
+
+  const handeUpdatedData = () => {
+    console.log("handFunction: " + noteContent);
+    toast.promise(sendEditData(noteContent), {
+      loading: "Please wait..",
+      success: "Saved",
+      error: "fail to saved",
+    });
+  };
   return (
     <div>
       <HomeUser />
       <div>
         <Toaster />
-        <input
-          type="text"
-          className="title"
-          placeholder="heading"
-          value={editTitle.title || ""}
-          onChange={(e) => setTitle(e.target.value)}
-          contentEditable="true"
-        />
-        <QMenu editor={editor} />
-        {editCon ? <EditorContent editor={editor} /> : <h1>Loading</h1>}
-        <button className="btn">Create Plan</button>
-        {cont}
+        <div className="backbtn">
+          <Link
+            to={`/user_dashboard/${con_id}`}
+            className="flex m-3 border-amber-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-6 flex ml-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <h1 className="font-bold ml-3 hover:underline">Back</h1>
+          </Link>
+        </div>
+        <div className="edit">
+          <input
+            type="text"
+            className="title outline-0"
+            placeholder="heading"
+            value={editTitle.title || ""}
+            readOnly
+          />
+          <QMenu editor={editor} />
+          {editCon ? <EditorContent editor={editor} /> : <h1>Loading</h1>}
+          <button className="btn" onClick={handeUpdatedData}>
+            Save Change
+          </button>
+        </div>
       </div>
     </div>
   );

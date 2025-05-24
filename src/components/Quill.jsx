@@ -16,14 +16,20 @@ export const Quills = () => {
   const [title, setTitle] = useState("");
 
   const onChange = () => {
-    const post = { title, noteContent };
-    toast.promise(PostContent(post), {
-      loading: "Please wait...",
-      success: "Done, Note Created",
-    });
-    if (toast.success) window.location = "/user_dashboard";
+    let flag = false;
+    if (title.trim().length === 0 && noteContent.trim().length === 0) {
+      toast.error(" Title/Content is required");
+    } else {
+      const post = { title, noteContent };
+      toast.promise(PostContent(post), {
+        loading: "Please wait...",
+        success: "Done, Note Created",
+      });
+      flag = true;
+    }
+
+    if (flag) window.location = "/user_dashboard";
   };
-  // window.location = "/user_dashboard";
 
   const editor = useEditor({
     extensions: [
