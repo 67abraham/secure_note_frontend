@@ -12,7 +12,6 @@ export function SinglePlan() {
   const { id } = useParams();
   const [spa, setspa] = useState({});
   const content = DOMPurify.sanitize(spa.noteContent);
-  console.log("id: " + id);
 
   async function singleData() {
     try {

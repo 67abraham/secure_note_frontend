@@ -92,19 +92,6 @@
   cursor: pointer;
 }
 
-.click {
-  display: flex;
-  position: relative;
-  max-width: 100%;
-  max-height: 50px;
-  background: orange;
-  z-index: 2;
-  bottom: 0px;
-  right: 0;
-  margin-bottom: 0;
-  height: 30px;
-}
-
 .button {
   margin-right: 6px;
 }

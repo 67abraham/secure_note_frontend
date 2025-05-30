@@ -97,7 +97,6 @@ export const EditContent = () => {
   });
 
   const handeUpdatedData = () => {
-    console.log("handFunction: " + noteContent);
     toast.promise(sendEditData(noteContent), {
       loading: "Please wait..",
       success: "Saved",
