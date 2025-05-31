@@ -94,3 +94,18 @@ export async function PostContent(contents) {
     toast.error("Fail to Create Plane");
   }
 }
+
+export async function VisitortorMessage(Data) {
+  try {
+    const sendFeedback = await axios.post(
+      "http://localhost:8080/user/feedback",
+      Data
+    );
+
+    if (sendFeedback.data) {
+      toast.success(`Thank ${Data.visitorName} for reaching us`);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}

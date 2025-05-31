@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { HomeLagout } from "../components/HomeLagout";
 import handWriting from "../assets/hand.png";
 import { useNavigate } from "react-router-dom";
 import { Foster } from "../components/Foster";
+import { toast, Toaster } from "react-hot-toast";
+import { VisitortorMessage } from "../utils/axio";
 
 export const Home = () => {
   const nagivate = useNavigate();
+  const [visitorName, setVisitorName] = useState("");
+  const [feedMessage, setFeedMessage] = useState("");
+
+  function handleMessage(e) {
+    e.preventDefault();
+
+    const visitorFeedBack = { visitorName, feedMessage };
+    console.log(visitorFeedBack);
+    toast.promise(VisitortorMessage(visitorFeedBack), {
+      loading: "Please wait..",
+      error: "Message Fail, Please Try Again",
+    });
+
+    setFeedMessage("");
+    setVisitorName("");
+  }
+
   return (
     <div className="w-screen relative mainHome">
       <HomeLagout />
+      <Toaster />
       <div className="bg-[#021a37] home relative ">
         <div className="flex place-content-center">
           <div className=" relative mobCont">
@@ -107,18 +127,24 @@ export const Home = () => {
         <div className="feedback">
           <form action="#" className="feedCon">
             <h2 className="AbutText">FeedBack</h2>
-            <p>Please tell us your experience on our website</p>
+            <p>Please tell us your experience about our website</p>
             <p>Your feedback Help for Future improvement</p>
             <input
               type="text"
               placeholder="Please enter email for personal appreciation"
+              value={visitorName}
+              onChange={(e) => setVisitorName(e.target.value)}
             />
             <textarea
               name="commit"
               maxLength={500}
               placeholder="feedback/commitment"
+              value={feedMessage}
+              onChange={(e) => setFeedMessage(e.target.value)}
             ></textarea>
-            <button className="feedBtn">- Submit - </button>
+            <button className="feedBtn" onClick={handleMessage}>
+              - Submit -{" "}
+            </button>
           </form>
         </div>
       </div>

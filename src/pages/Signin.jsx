@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import DateCom from "../components/DateCom";
 import { loginData } from "../utils/axio";
 import toast, { Toaster } from "react-hot-toast";
+import { Foster } from "../components/Foster";
 
 export const Signin = () => {
   const [email, setEmail] = useState("");
@@ -56,11 +57,11 @@ export const Signin = () => {
   }
 
   return (
-    <div className="w-screen h-screen relative overflow-hidden bg-amber-50">
+    <div className="w-screen relative bg-amber-50">
       <Toaster />
       <HomeLagout />
       <div className="flex items-center justify-center">
-        <div className="mt-20 w-110 h-150 rounded overflow-hidden bg-[#021a37] shadow-2xl">
+        <div className="mt-20 w-110 h-150 rounded overflow-hidden bg-[#021a37] shadow-2xl signBox">
           <div className="flex items-center justify-center mt-4">
             <h1 className="rounded-md text-2xl  text-amber-500 font-extrabold px-3 py-2 cursor-pointer ">
               AirNote
@@ -133,6 +134,7 @@ export const Signin = () => {
           </form>
         </div>
       </div>
+      <Foster />
     </div>
   );
 };
