@@ -11,8 +11,8 @@ export const Home = () => {
       <HomeLagout />
       <div className="bg-[#021a37] home relative ">
         <div className="flex place-content-center">
-          <div className=" relative top-40">
-            <h1 className="text-white text-7xl">
+          <div className=" relative mobCont">
+            <h1 className="text-white text-7xl welText">
               Welcome to{" "}
               <span className="text-amber-500 font-bold">AIRNOTE</span>
             </h1>
@@ -21,53 +21,59 @@ export const Home = () => {
               The Best Place for Handing What{" "}
               <b className="text-white">MATTER</b>
             </p>
-
-            <h2 className="text-gray-300 font-medium text-2xl flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-6 text-amber-400 stroke-5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Todo Plan
-            </h2>
-            <h2 className="text-gray-300 font-medium text-2xl flex px-10 p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-6 text-amber-400 stroke-5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Future Plan
-            </h2>
-            <h2 className="text-gray-300 font-medium text-2xl flex p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-6 text-amber-400 stroke-5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Ideas Plan
-            </h2>
-            <div className="relative space-x-4 mt-3 p-5">
+            <div className="mobTextDes">
+              <div className="mobText">
+                <h2 className="text-gray-300 font-medium text-2xl flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6 text-amber-400 stroke-5"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Todo Plan
+                </h2>
+                <h2 className="text-gray-300 font-medium text-2xl flex px-10 p-2 futurep">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6 text-amber-400 stroke-5"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Future Plan
+                </h2>
+                <h2 className="text-gray-300 font-medium text-2xl flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="size-6 text-amber-400 stroke-5"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Ideas Plan
+                </h2>
+              </div>
+              <div className=" right-0">
+                <img src={handWriting} alt="" width={400} />
+              </div>
+            </div>
+            <div className="relative SignUp_bt">
               <button
                 className="bg-amber-600 text-white p-2 px-5 rounded-md text-2xl hover:bg-amber-500 pointer font-bold"
                 onClick={() => nagivate("/register_user")}
@@ -76,17 +82,45 @@ export const Home = () => {
               </button>
             </div>
           </div>
-          <div className="absolute right-0 mt-60">
-            <img src={handWriting} alt="" width={400} />
-          </div>
         </div>
       </div>
       <div className="spir">
-        <h2>
+        <h2 className="spirText">
           A dream written down with a date become a goal. A goal broken down
           into steps becomes a plan. Aplan backed by action makes your dreams
           come true.
         </h2>
+      </div>
+      <div className="About-Use">
+        <div className="contentHere">
+          <h2 className="AbutText">About Us</h2>
+          <p>
+            "Huangdao, Qingdao is the home of [Your Company Name]. We're
+            passionate about [your industry/product] and believe in [your core
+            values]. Our team, led by [Founder's Name], is dedicated to [mission
+            statement]. We've been serving [target audience] for [number of
+            years], helping them [benefit/solution]. We're constantly innovating
+            and growing to provide [unique value proposition]. Join us on our
+            journey, and explore our [products/services]." 
+          </p>
+        </div>
+        <div className="feedback">
+          <form action="#" className="feedCon">
+            <h2 className="AbutText">FeedBack</h2>
+            <p>Please tell us your experience on our website</p>
+            <p>Your feedback Help for Future improvement</p>
+            <input
+              type="text"
+              placeholder="Please enter email for personal appreciation"
+            />
+            <textarea
+              name="commit"
+              maxLength={500}
+              placeholder="feedback/commitment"
+            ></textarea>
+            <button className="feedBtn">- Submit - </button>
+          </form>
+        </div>
       </div>
       <Foster />
     </div>

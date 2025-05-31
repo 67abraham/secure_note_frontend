@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { MobieIcon } from "./MobieIcon";
 
 export const HomeLagout = () => {
+  const [openIcon, setOpenIcon] = useState(false);
   const nagivate = useNavigate();
   return (
     <div>
-      <div className=" bg-[#021526] p-3 shadow-md sticky">
-        <div className="absolute left-[20px] flex ">
+      <div className=" bg-[#021526] p-3 shadow-md sticky wideScreen">
+        <div className="ml-[30px] flex ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -19,7 +21,7 @@ export const HomeLagout = () => {
             AirNote
           </h1>
         </div>
-        <div className="flex center m-0 text-center relative left-50">
+        <div className="flex center m-0 text-center relative mobile">
           <a
             href="/"
             className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
@@ -45,22 +47,59 @@ export const HomeLagout = () => {
           >
             Dashboard
           </a>
-          <div className="absolute right-55 space-x-4 mt-0.5">
-            <button
-              className="bg-amber-600 text-white p-2 px-5 rounded-md text-sm hover:bg-amber-500 cursor-pointer"
-              onClick={() => nagivate("/register_user")}
+        </div>
+        <div className=" mr-[20px] space-x-4 mt-0.5 flex mobile">
+          <button
+            className="bg-amber-600 text-white p-2 px-5 rounded-md text-sm hover:bg-amber-500 cursor-pointer"
+            onClick={() => nagivate("/register_user")}
+          >
+            Sign-Up
+          </button>
+          <button
+            className="bg-amber-600 text-white p-2 px-5 rounded-md  text-sm hover:bg-amber-500 cursor-pointer"
+            onClick={() => nagivate("/login_user")}
+          >
+            Login
+          </button>
+        </div>
+
+        <div className="icoDev">
+          {openIcon ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-8 icon"
+              onClick={() => setOpenIcon(false)}
             >
-              Sign-Up
-            </button>
-            <button
-              className="bg-amber-600 text-white p-2 px-5 rounded-md  text-sm hover:bg-amber-500 cursor-pointer"
-              onClick={() => nagivate("/login_user")}
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-8 icon"
+              onClick={() => setOpenIcon(true)}
             >
-              Login
-            </button>
-          </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          )}
         </div>
       </div>
+      <MobieIcon open={openIcon} />
     </div>
   );
 };

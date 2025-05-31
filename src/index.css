@@ -20,7 +20,6 @@
 }
 
 .home {
-  height: 100%;
   overflow: none;
 }
 .mainHome {
@@ -316,7 +315,234 @@
   position: relative;
   margin-top: 60px;
 }
+.wideScreen {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-/* @media screen and (max-width: 500px) {
-  
-} */
+.icoDev {
+  display: none;
+}
+.mobCont {
+  margin-top: 7%;
+}
+
+.mobTextDes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -20px;
+}
+
+.mobText {
+  margin-top: -60px;
+}
+
+.SignUp_bt {
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+.About-Use {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+
+.contentHere {
+  width: 500px;
+  margin: 12px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #035781;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.AbutText {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 12px;
+}
+
+.feedback {
+  width: 500px;
+}
+.feedCon {
+  display: block;
+  margin: 8px;
+}
+
+.feedCon > input {
+  display: block;
+  padding: 12px;
+  outline: 1px solid #035781;
+  width: 100%;
+  place-items: 5px;
+  margin: 8px;
+  border-radius: 5px;
+}
+
+.feedCon > textarea {
+  padding: 12px;
+  width: 100%;
+  outline: 1px solid #035781;
+  margin: 8px;
+}
+
+.feedBtn {
+  width: 90%;
+  padding: 8px;
+  margin: 12px auto;
+  background: #021526;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  transition: padding 0.5s;
+}
+.feedBtn:hover {
+  padding: 7px;
+  cursor: pointer;
+  background: #054e8ead;
+}
+@media screen and (max-width: 800px) {
+  .mobile {
+    display: none;
+  }
+
+  .icoDev {
+    display: flex;
+    padding: 10px;
+    position: relative;
+    color: #fff;
+  }
+
+  .MobDisplayIcon {
+    position: relative;
+    background: #021526c9;
+    width: 100%;
+    display: inline-flex;
+    transition: 0.5s;
+  }
+
+  .Mobile_item {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .items {
+    display: block;
+    margin: 12px;
+    padding: 4px;
+    border-bottom: 1px solid rgb(143, 139, 139);
+    color: white;
+  }
+
+  .mobileBtn {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+  }
+
+  .btn1 {
+    padding: 3px;
+    margin-bottom: 4px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .mobCont {
+    display: block;
+    text-align: center;
+    margin-top: 20%;
+    padding: 12px;
+  }
+
+  .mobText {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .mobTextDes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .futurep {
+    padding-left: 0;
+  }
+  .SignUp_bt {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .welText {
+    font-size: 40px;
+  }
+
+  .spir > h2 {
+    margin: 12px;
+    font-size: 20px;
+    text-align: center;
+    width: 90%;
+  }
+
+  .spir {
+    width: 100%;
+    background-image: url("../assets/bk.jpg");
+  }
+
+  .About-Use {
+    width: 100%;
+    display: block;
+    align-items: center;
+    margin: 8px;
+  }
+
+  .contentHere {
+    margin: 12px;
+    padding: 8px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid #000b11;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .feedback {
+    width: 100%;
+  }
+
+  .feedCon {
+    display: block;
+    margin-left: 8px;
+    margin-top: 50px;
+    width: 90%;
+  }
+
+  .feedCon > input {
+    display: block;
+    padding: 12px;
+    outline: 1px solid #035781;
+    width: 100%;
+    place-items: 5px;
+    margin: 8px;
+  }
+
+  .feedCon > textarea {
+    padding: 12px;
+    width: 100%;
+    outline: 1px solid #035781;
+    margin: 8px;
+  }
+}

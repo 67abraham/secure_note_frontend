@@ -58,7 +58,6 @@ export const Login = () => {
     if (formValid()) {
       toast.promise(creatUser(userData), {
         loading: "SignUp...",
-        success: <b>SignUp Success!</b>,
         error: <b>Email is taken.</b>,
       });
 

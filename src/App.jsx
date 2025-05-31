@@ -6,6 +6,7 @@ import { Signin } from "./pages/Signin";
 import { UserWork } from "./pages/UserWork";
 import { SinglePlan } from "./components/SinglePlan";
 import { EditContent } from "./components/EditContent";
+import { AiAssistant } from "./components/AiAssistant";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/user_dashboard" element={<UserWork />} />
       <Route path="/user_dashboard/:id" element={<SinglePlan />} />
       <Route path="/edit_content/:con_id" element={<EditContent />} />
+      <Route path="/user_dashboard/ai_prompt" element={<AiAssistant />} />
     </Routes>
   );
 }

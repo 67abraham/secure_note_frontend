@@ -17,7 +17,7 @@ export const HomeLagout = () => {
             AirNote
           </h1>
         </div>
-        <div className="flex center m-0 text-center relative left-50">
+        <div className="flex center m-0 text-center relative left-50 mobile">
           <a
             href="/"
             className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
