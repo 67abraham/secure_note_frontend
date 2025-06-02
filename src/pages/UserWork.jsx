@@ -5,6 +5,7 @@ import { Mode } from "../components/Mode";
 import axios, { Axios } from "axios";
 import parse from "html-react-parser";
 import toast from "react-hot-toast";
+import { Foster } from "../components/Foster";
 // import { DotLottieReact } from "lottie-react/dotlottie-react";
 
 export const UserWork = () => {
@@ -51,10 +52,33 @@ export const UserWork = () => {
     <div>
       <HomeUser />
       <div>
-        <div className="content">
-          <div className="overde">
+        {/* mobile view */}
+        <div className="linkBar">
+          <div className="ai">
+            <Link to={"/user_dashboard/ai_prompt"}>
+              <h2 className="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class=" text-amber-700 button inline-block size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+                Ai Assistant
+              </h2>
+            </Link>
+          </div>
+
+          <div className="overde1">
             <button
-              className="cursor-pointer add"
+              className="cursor-pointer add2"
               onClick={() => setOpenModel(true)}
             >
               <svg
@@ -63,7 +87,7 @@ export const UserWork = () => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-8"
+                class="size-6 inline-block"
               >
                 <path
                   strokeLinecap="round"
@@ -71,13 +95,38 @@ export const UserWork = () => {
                   d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 />
               </svg>
-              Add Content
+              <h1 className="inline-block ml-1">Add Content</h1>
             </button>
           </div>
+        </div>
+        {/* mobile view end here */}
+        <div className="content">
           <Mode open={openModel} onClose={() => setOpenModel(false)} />
-          <div className="sidebar">
+          <div className="sidebar mobile">
+            <div className="overde mobile">
+              <button
+                className="cursor-pointer add"
+                onClick={() => setOpenModel(true)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-8"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+                Add Content
+              </button>
+            </div>
             <div className="p-4 mt-20">
-              <h2 className="text-3xl border-b-1 border-gray-500 font-extrabold  sm:xl md:xl">
+              <h2 className="text-3xl border-b-1 border-gray-500 font-extrabold">
                 Welcome Back Onboard!!
               </h2>
 
@@ -127,6 +176,7 @@ export const UserWork = () => {
           </div>
         </div>
       </div>
+      <Foster />
     </div>
   );
 };

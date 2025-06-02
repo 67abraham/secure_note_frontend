@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
 @theme {
   --font-sans: InterVariable, sans-serif;
@@ -45,7 +44,6 @@
 
 .sidebar {
   width: 200px;
-  height: 100dvh;
   background-color: #023047;
   position: relative;
   /* margin-right: 30px; */
@@ -60,13 +58,21 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  flex: 1;
   gap: 15px;
-  margin: auto;
   justify-content: center;
-  margin-top: 140px;
-  margin-left: 40px;
-  padding: 8px;
+  margin: 40px 10px 20px 150px;
+  height: 700px;
+
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: 10px;
+}
+.item::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #023047;
 }
 
 .data {
@@ -78,13 +84,11 @@
   background-color: #023047;
   color: #fff;
   overflow: hidden;
-  left: 30%;
 }
 
 .dataCont {
   height: 230px;
   overflow: hidden;
-
   background-color: #023047;
   transition: background 0.3s;
 }
@@ -102,18 +106,16 @@
 
 .add {
   background: #023047;
-  max-width: 100%;
+  width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-left: 30px;
   border-radius: 10px;
   padding: 12px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 900;
   display: flex;
   color: #fff;
   cursor: pointer;
   box-sizing: content-box;
-  margin-top: 10px;
 }
 
 .add:hover {
@@ -121,13 +123,9 @@
 }
 
 .overde {
-  margin-top: 40px;
-  display: flex;
-  position: absolute;
-  right: 40px;
   border: none;
-  padding: 4px;
-  z-index: 1;
+  width: 100%;
+  margin: 30px 5px 0;
 }
 
 .overlay {
@@ -254,12 +252,8 @@
 }
 
 .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  left: 50%;
-  top: 50%;
+  margin: 0 auto;
+  float: right;
   font-size: 25px;
   color: #023047;
   font-weight: bold;
@@ -354,13 +348,15 @@
   margin: 12px;
   padding: 8px;
   text-align: center;
-  border: 1px solid #035781;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .AbutText {
   font-weight: bold;
   font-size: 20px;
+  margin: 12px;
+}
+.contentHere > p {
   margin: 12px;
 }
 
@@ -440,6 +436,74 @@
 }
 .signBox {
   margin-bottom: 70px;
+}
+.linkBar {
+  display: none;
+}
+
+/* image scrolling */
+.imageScroller {
+  width: 100%;
+  margin-bottom: 80px;
+  margin-top: 40px;
+}
+
+.imageScroller > h1 {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  width: 100%;
+  background: #021526;
+  mask: linear-gradient(90deg, transparent, white 20%, white 70%, transparent);
+  padding: 5px;
+  color: #fff;
+}
+
+.tagList {
+  margin-bottom: 30px;
+}
+
+.tagList > li {
+  list-style: none;
+  margin: 12px 0 100px 12px;
+  width: 200px;
+  height: 100px;
+  padding-block: 12px;
+}
+
+.tagList > li > img {
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.scroller_inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding-block: 8px;
+  width: max-content;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 40%,
+    white 70%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 40%, white 70%, transparent);
+}
+.scroller[data-animated="true"] .scroller_inner {
+  flex-wrap: nowrap;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(-50%, 6px);
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -544,7 +608,7 @@
     padding: 8px;
     width: 90%;
     text-align: center;
-    border: 1px solid #000b11;
+
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
@@ -579,5 +643,86 @@
   .signBox {
     width: 85%;
     margin-bottom: 50px;
+  }
+
+  .combine {
+    display: flex;
+  }
+
+  .icoDev1 {
+    display: flex;
+    padding: 10px;
+    margin-top: 6px;
+    position: relative;
+    color: #fff;
+  }
+
+  .linkBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #023047;
+    padding: 4px;
+  }
+
+  .overde1 {
+    display: flex;
+    border: none;
+    z-index: 1;
+  }
+
+  .add2 {
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 900;
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .ai {
+    color: white;
+    font-weight: bold;
+  }
+
+  .item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 1;
+    gap: 15px;
+    margin: auto;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 8px;
+  }
+
+  .container {
+    max-height: 700px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: 10px;
+    display: block;
+    justify-content: center;
+    transform: translate(-60%, -40%);
+  }
+
+  .overlay {
+    width: 100%;
+    z-index: 5;
+  }
+
+  .backbtn {
+    display: block;
+    position: relative;
+    width: 100%;
+    color: black;
+    border-bottom: 1px solid gray;
   }
 }

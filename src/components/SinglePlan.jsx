@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import DOMPurify from "dompurify";
 import toast, { Toaster } from "react-hot-toast";
+import { Foster } from "./Foster";
 
 export function SinglePlan() {
   const { id } = useParams();

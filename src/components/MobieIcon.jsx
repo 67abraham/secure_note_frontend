@@ -33,3 +33,28 @@ export const MobieIcon = ({ open }) => {
     </div>
   );
 };
+
+export const MobieIcon2 = ({ open }) => {
+  const nagivate = useNavigate();
+  if (!open) {
+    return null;
+  }
+  return (
+    <div className="MobDisplayIcon">
+      <div className="Mobile_item">
+        <a href="/" className="items" aria-current="page">
+          Home
+        </a>
+        <a href="#" className="items">
+          About-Us
+        </a>
+        <a href="#" className="items ">
+          Projects
+        </a>
+        <a href="/user_dashboard" className=" items">
+          Dashboard
+        </a>
+      </div>
+    </div>
+  );
+};
