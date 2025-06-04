@@ -7,6 +7,8 @@ import { UserWork } from "./pages/UserWork";
 import { SinglePlan } from "./components/SinglePlan";
 import { EditContent } from "./components/EditContent";
 import { AiAssistant } from "./components/AiAssistant";
+import { Admin } from "./pages/Admin";
+import { AdminLogin } from "./pages/AdminLogin";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Route path="/user_dashboard/:id" element={<SinglePlan />} />
       <Route path="/edit_content/:con_id" element={<EditContent />} />
       <Route path="/user_dashboard/ai_prompt" element={<AiAssistant />} />
+      <Route path="/administrator_only" element={<Admin />} />
+      <Route path="/administrator_login" element={<AdminLogin />} />
     </Routes>
   );
 }

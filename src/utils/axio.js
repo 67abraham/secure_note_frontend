@@ -109,3 +109,22 @@ export async function VisitortorMessage(Data) {
     console.error(error);
   }
 }
+
+// adminLogin
+
+export async function AdminData(Data) {
+  try {
+    const sendlog = await axios.post(
+      "http://localhost:8080/api/admin/login",
+      Data
+    );
+
+    if (sendlog.status == 200) {
+      toast.success(`Welcome Administrator`);
+      window.location = "/administrator_only";
+    }
+  } catch (error) {
+    console.log(error);
+    toast.error("Data not correct");
+  }
+}

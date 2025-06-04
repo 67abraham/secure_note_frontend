@@ -23,6 +23,11 @@ export const Foster = () => {
             <li>Privacy Policy</li>
             <li>Conpyright Information</li>
             <li>Terms & Policy</li>
+            <li>
+              <a href="administrator_login">
+                <i>Admin</i>
+              </a>
+            </li>
           </ul>
         </div>
         <div className="socialIcon">
