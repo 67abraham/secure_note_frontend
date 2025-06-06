@@ -570,9 +570,47 @@
   background-position: center;
 }
 .containerDiv {
+  background: #000b11;
   display: block;
   padding: 12px;
-  border: 1px solid red;
+}
+.adminHere {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.totalUser {
+  display: block;
+  width: 300px;
+  text-align: center;
+  padding: 4px;
+  border-radius: 10px;
+  /* background-color: #023047d6; */
+  backdrop-filter: blur(10px);
+}
+
+.adminBtn > ul > li {
+  font-weight: bold;
+  margin: 12px;
+  font-size: 18px;
+}
+
+.visitorDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px;
+}
+.VisitorData {
+  width: 250px;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #023047;
+  color: #fff;
+  overflow: hidden;
 }
 @media screen and (max-width: 800px) {
   .mobile {

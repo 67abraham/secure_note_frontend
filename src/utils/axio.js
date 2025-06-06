@@ -123,6 +123,7 @@ export async function AdminData(Data) {
       toast.success(`Welcome Administrator`);
       window.location = "/administrator_only";
     }
+    localStorage.setItem("admin", JSON.stringify(sendlog.data));
   } catch (error) {
     console.log(error);
     toast.error("Data not correct");
