@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserName } from "./UserName";
 import { DropDown } from "./DropDown";
 import { MobieIcon2 } from "./MobieIcon";
 

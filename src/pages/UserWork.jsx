@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Mode } from "../components/Mode";
 import axios, { Axios } from "axios";
 import parse from "html-react-parser";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { Foster } from "../components/Foster";
 // import { DotLottieReact } from "lottie-react/dotlottie-react";
 
@@ -37,7 +37,9 @@ export const UserWork = () => {
   }
 
   useEffect(() => {
-    getContent();
+    toast.promise(getContent(), {
+      loading: "please wait...",
+    });
   }, []);
 
   let loading;
@@ -51,6 +53,7 @@ export const UserWork = () => {
   return (
     <div>
       <HomeUser />
+      <Toaster />
       <div>
         {/* mobile view */}
         <div className="linkBar">
@@ -63,7 +66,7 @@ export const UserWork = () => {
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class=" text-amber-700 button inline-block size-6"
+                  className=" text-amber-700 button inline-block size-6"
                 >
                   <path
                     stroke-linecap="round"
@@ -72,6 +75,25 @@ export const UserWork = () => {
                   />
                 </svg>
                 Ai Assistant
+              </h2>
+            </Link>
+          </div>
+          <div>
+            <Link to={"/user_dashboard/upload_content"}>
+              <h2 className="add2 mt-5 p-2 hover:bg-gray-500 rounded text-[14px] w-full inline-block">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="@max-sm:size-5 text-amber-700 button inline-block size-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Upload File
               </h2>
             </Link>
           </div>
@@ -87,7 +109,7 @@ export const UserWork = () => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6 inline-block"
+                className="size-6 inline-block"
               >
                 <path
                   strokeLinecap="round"
@@ -114,7 +136,7 @@ export const UserWork = () => {
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="size-8"
+                  className="size-8"
                 >
                   <path
                     strokeLinecap="round"
@@ -138,7 +160,7 @@ export const UserWork = () => {
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="@max-sm:size-5 text-amber-700 button inline-block size-6"
+                    className="@max-sm:size-5 text-amber-700 button inline-block size-6"
                   >
                     <path
                       stroke-linecap="round"
@@ -149,13 +171,13 @@ export const UserWork = () => {
                   Ai Assistant
                 </h2>
               </Link>
-              <Link to={"#"}>
+              <Link to={"/user_dashboard/upload_content"}>
                 <h2 className="mt-5 p-2 hover:bg-gray-500 rounded text-[14px] w-full inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    class="@max-sm:size-5 text-amber-700 button inline-block size-6"
+                    className="@max-sm:size-5 text-amber-700 button inline-block size-6"
                   >
                     <path
                       fill-rule="evenodd"

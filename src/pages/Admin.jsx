@@ -10,7 +10,6 @@ export const Admin = () => {
   const adminData = JSON.parse(localStorage.getItem("admin"));
   const [user, setUser] = useState([]);
   const len = user.length;
-  let signOutChech = true;
 
   async function sendId(id) {
     try {
@@ -55,7 +54,7 @@ export const Admin = () => {
 
   function handleLogout() {
     const clear = localStorage.removeItem("admin");
-    signOutChech = false;
+    const clear2 = localStorage.removeItem("isLoggedIn");
     window.location = "/";
   }
 

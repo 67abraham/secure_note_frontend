@@ -9,6 +9,8 @@ import { EditContent } from "./components/EditContent";
 import { AiAssistant } from "./components/AiAssistant";
 import { Admin } from "./pages/Admin";
 import { AdminLogin } from "./pages/AdminLogin";
+import { ProtectedRout } from "./Redux/ProtectedRout";
+import { UploadContent } from "./components/UploadContent";
 
 function App() {
   return (
@@ -18,11 +20,18 @@ function App() {
 
       <Route path="/register_user" element={<Login />} />
       <Route path="/login_user" element={<Signin />} />
-      <Route path="/user_dashboard" element={<UserWork />} />
-      <Route path="/user_dashboard/:id" element={<SinglePlan />} />
-      <Route path="/edit_content/:con_id" element={<EditContent />} />
-      <Route path="/user_dashboard/ai_prompt" element={<AiAssistant />} />
-      <Route path="/administrator_only" element={<Admin />} />
+
+      <Route element={<ProtectedRout />}>
+        <Route path="/user_dashboard" element={<UserWork />} />
+        <Route path="/user_dashboard/:id" element={<SinglePlan />} />
+        <Route path="/edit_content/:con_id" element={<EditContent />} />
+        <Route path="/user_dashboard/ai_prompt" element={<AiAssistant />} />
+        <Route
+          path="/user_dashboard/upload_content"
+          element={<UploadContent />}
+        />
+        <Route path="/administrator_only" element={<Admin />} />
+      </Route>
       <Route path="/administrator_login" element={<AdminLogin />} />
     </Routes>
   );
