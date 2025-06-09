@@ -44,24 +44,28 @@ export const UploadMode = ({ open, onClose }) => {
   if (!open) {
     return null;
   }
-  const [document, setDocument] = useState(false);
+  const [document, setDocument] = useState(null);
   const [name, setName] = useState("");
 
   function sendDocument(e) {
     e.preventDefault();
     console.log("document: " + document.name);
-    // if (name.trim().length < 0) {
-    //   setName(document.name);
-    //   console.log("name: " + name);
-    // }
-    const formdata = new FormData();
-    formdata.append("description", JSON.stringify(name));
-    formdata.append("file", document);
-    toast.promise(DocumentData(formdata), {
-      loading: "Please wait ....",
-    });
-    setDocument("");
-    setName("");
+
+    if (document != null) {
+      setName((preName) => (preName ? preName : document.name));
+      console.log("name: " + name);
+    }
+
+    if (name.trim().length > 0) {
+      const formdata = new FormData();
+      formdata.append("description", JSON.stringify(name));
+      formdata.append("file", document);
+      toast.promise(DocumentData(formdata), {
+        loading: "Please wait ....",
+      });
+    }
+    // setDocument("");
+    // setName("");
   }
 
   return (
@@ -101,7 +105,7 @@ export const UploadMode = ({ open, onClose }) => {
               id="name"
               required
               placeholder="file name..."
-              value={name || document.name || ""}
+              value={name || (document ? document.name : "")}
               onChange={(e) => setName(e.target.value)}
             />
             <br />
