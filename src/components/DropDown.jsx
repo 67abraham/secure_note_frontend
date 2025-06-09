@@ -21,8 +21,8 @@ export const DropDown = () => {
         <li className="text-gray-500 m-2 p-2 border-b-1 border-gray-400">
           <a href="#">Profile</a>
         </li>
-        <button onClick={handleLogout}>
-          <li className="flex m-2 p-2 text-white cursor-pointer hover:bg-gray-600 rounded">
+        <button onClick={handleLogout} className="w-full">
+          <li className="flex m-2 p-2 text-white cursor-pointer w-[90%] hover:bg-gray-600 rounded">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

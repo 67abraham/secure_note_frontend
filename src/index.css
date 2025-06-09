@@ -665,6 +665,18 @@
   align-items: center;
   margin: auto;
 }
+.pageCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 50%;
+  left: 40%;
+  transform: translate(0, 200px);
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+}
 @media screen and (max-width: 800px) {
   .mobile {
     display: none;
@@ -881,6 +893,7 @@
 
   .upContainer {
     max-height: 700px;
+    width: 100%;
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -889,7 +902,17 @@
     scrollbar-width: 10px;
     display: block;
     justify-content: center;
-    transform: translate(-60%, -40%);
+    transform: translate(-50%, -40%);
+  }
+
+  .firstCol {
+    text-align: end;
+    text-wrap: wrap;
+    text-justify: auto;
+  }
+
+  .tableMoble {
+    width: 98%;
   }
 
   .overlay {

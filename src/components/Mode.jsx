@@ -49,23 +49,22 @@ export const UploadMode = ({ open, onClose }) => {
 
   function sendDocument(e) {
     e.preventDefault();
-    console.log("document: " + document.name);
 
     if (document != null) {
       setName((preName) => (preName ? preName : document.name));
-      console.log("name: " + name);
     }
+    console.log("size: " + document.size);
 
     if (name.trim().length > 0) {
-      const formdata = new FormData();
-      formdata.append("description", JSON.stringify(name));
-      formdata.append("file", document);
-      toast.promise(DocumentData(formdata), {
-        loading: "Please wait ....",
-      });
+      if (document.size <= 1000000) {
+        const formdata = new FormData();
+        formdata.append("description", JSON.stringify(name));
+        formdata.append("file", document);
+        toast.promise(DocumentData(formdata), {
+          loading: "Please wait ....",
+        });
+      } else toast.error("file size too large");
     }
-    // setDocument("");
-    // setName("");
   }
 
   return (
@@ -111,7 +110,11 @@ export const UploadMode = ({ open, onClose }) => {
             <br />
             <br />
             <h2 className="ml-2 font-bold">Click to Upload</h2>
-            <label htmlFor="image">
+            <p>Size:1000KB </p>
+            <label
+              htmlFor="image"
+              className="cursor-pointer hover:text-blue-400"
+            >
               {document ? (
                 document.name
               ) : (
@@ -135,7 +138,7 @@ export const UploadMode = ({ open, onClose }) => {
               type="file"
               name="image"
               id="image"
-              accept=".pdf, .doc, .docx, .pptx, image/*"
+              accept=".pdf, .doc, .docx, .pptx, .ppt, image/*"
               hidden
               required
               onChange={(e) => setDocument(e.target.files[0])}

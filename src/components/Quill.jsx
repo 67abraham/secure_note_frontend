@@ -21,10 +21,8 @@ export const Quills = () => {
       toast.error(" Title/Content is required");
     } else {
       const post = { title, noteContent };
-      toast.promise(PostContent(post), {
-        loading: "Please wait...",
-        success: "Done, Note Created",
-      });
+      PostContent(post);
+
       flag = true;
     }
 

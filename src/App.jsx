@@ -6,7 +6,7 @@ import { Signin } from "./pages/Signin";
 import { UserWork } from "./pages/UserWork";
 import { SinglePlan } from "./components/SinglePlan";
 import { EditContent } from "./components/EditContent";
-import { AiAssistant } from "./components/AiAssistant";
+import { AiAssistant, NotFound } from "./components/AiAssistant";
 import { Admin } from "./pages/Admin";
 import { AdminLogin } from "./pages/AdminLogin";
 import { ProtectedRout } from "./Redux/ProtectedRout";
@@ -33,6 +33,7 @@ function App() {
         <Route path="/administrator_only" element={<Admin />} />
       </Route>
       <Route path="/administrator_login" element={<AdminLogin />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

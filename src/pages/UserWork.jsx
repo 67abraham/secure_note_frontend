@@ -31,8 +31,10 @@ export const UserWork = () => {
         setNote(response.data);
       }
     } catch (e) {
-      toast.error("fail");
+      toast.error("session expired");
       window.location = "/login_user";
+      const clear = localStorage.removeItem("jwtToken");
+      const clear2 = localStorage.removeItem("isLoggedIn");
     }
   }
 

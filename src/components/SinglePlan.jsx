@@ -35,7 +35,9 @@ export function SinglePlan() {
   }
 
   useEffect(() => {
-    singleData();
+    toast.promise(singleData(), {
+      loading: "Please wait..",
+    });
   }, []);
 
   async function deleteData() {

@@ -3,8 +3,6 @@ import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
 export async function creatUser(userData) {
-  const dispatch = useDispatch();
-
   try {
     const response = await axios.post(
       "http://localhost:8080/user/register",
@@ -92,7 +90,9 @@ export async function PostContent(contents) {
     }
     return content.data;
   } catch {
-    toast.error("Fail to Create Plane");
+    toast.error("session expired");
+    const clear = localStorage.removeItem("jwtToken");
+    const clear2 = localStorage.removeItem("isLoggedIn");
   }
 }
 
@@ -156,6 +156,7 @@ export async function DocumentData(Data) {
   } catch (error) {
     console.log(error);
     toast.error("login session expire");
-    // window.location = "/login_user";
+    const clear = localStorage.removeItem("jwtToken");
+    const clear2 = localStorage.removeItem("isLoggedIn");
   }
 }

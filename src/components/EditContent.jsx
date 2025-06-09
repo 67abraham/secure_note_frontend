@@ -44,7 +44,10 @@ export const EditContent = () => {
   }
 
   useEffect(() => {
-    singleData();
+    toast.promise(singleData(), {
+      loading: "Please wait..",
+    });
+
     editor.commands.insertContent(cont);
   }, [cont]);
 
