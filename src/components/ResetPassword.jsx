@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import { resetPassData } from "../utils/axio";
+import { resetData, resetPassData } from "../utils/axio";
 
 export const VertifyEmail = () => {
   const [email, setEmail] = useState("");
@@ -31,7 +31,6 @@ export const VertifyEmail = () => {
     if (formValid()) {
       localStorage.setItem("userName", email);
       toast.promise(resetData(userData), {
-        success: "Email send",
         loading: "Please Wait...",
         error: <b>Account don't exist.</b>,
       });
@@ -259,6 +258,7 @@ export const ResetPassword = () => {
 };
 
 export const SuccessMessage = () => {
+  localStorage.removeItem("userName");
   return (
     <div className="w-screen relative ">
       <div className="flex items-center justify-center">

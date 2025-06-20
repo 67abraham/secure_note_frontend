@@ -112,7 +112,7 @@ export const Signin = () => {
             </div>
 
             <h2 className=" text-right text-teal-50 mt-2 p-2 italic hover:text-amber-600">
-              <a href="/reset_password">Forget Password?</a>
+              <a href="/verify_email">Forget Password?</a>
             </h2>
             <button
               type="submit"
