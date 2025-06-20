@@ -160,3 +160,42 @@ export async function DocumentData(Data) {
     const clear2 = localStorage.removeItem("isLoggedIn");
   }
 }
+
+export async function resetData(Data) {
+  try {
+    const response = await axios.post(
+      "http://localhost:8080/user/verify_email",
+      Data
+    );
+
+    if (response) {
+      window.location = "/verify_email/:verify";
+    } else {
+      toast.error("token is not coming");
+    }
+  } catch (error) {
+    if (error.response) {
+      toast.error("Invalid Email");
+    } else {
+      toast.error("Network problem");
+    }
+  }
+}
+
+export async function resetPassData(Data) {
+  try {
+    const response = await axios.post("http://localhost:8080/user/reset", Data);
+
+    if (response) {
+      window.location = "/reset_password/:success";
+    } else {
+      toast.error("token is not coming");
+    }
+  } catch (error) {
+    if (error.response) {
+      toast.error("OOp Try Again");
+    } else {
+      toast.error("Network problem");
+    }
+  }
+}

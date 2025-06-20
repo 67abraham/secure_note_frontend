@@ -24,7 +24,7 @@ export const Foster = () => {
             <li>Conpyright Information</li>
             <li>Terms & Policy</li>
             <li>
-              <a href="administrator_login">
+              <a href="administrator_login" target="_blank">
                 <i>Admin</i>
               </a>
             </li>
