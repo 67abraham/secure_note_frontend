@@ -180,7 +180,7 @@ export const Home = () => {
           </ul>
         </div>
       </div>
-      <div className="About-Use">
+      <div className="About-Use" id="about" name="about">
         <div className="contentHere">
           <h2 className="AbutText">About Us</h2>
           <p>
@@ -191,7 +191,7 @@ export const Home = () => {
             multiple Businesses for over 7year, helping them achieve their goal
             in the online world. We're constantly innovating and growing to
             provide the <b>Best out of the Best to our Customer</b>. Join us on
-            our journey, and explore our Product." 
+            our journey, and explore our Product."
           </p>
         </div>
         <div className="feedback">
