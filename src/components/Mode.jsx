@@ -56,14 +56,14 @@ export const UploadMode = ({ open, onClose }) => {
     console.log("size: " + document.size);
 
     if (name.trim().length > 0) {
-      if (document.size <= 1000000) {
-        const formdata = new FormData();
-        formdata.append("description", JSON.stringify(name));
-        formdata.append("file", document);
-        toast.promise(DocumentData(formdata), {
-          loading: "Please wait ....",
-        });
-      } else toast.error("file size too large");
+      const formdata = new FormData();
+      formdata.append("description", JSON.stringify(name));
+      formdata.append("file", document);
+      toast.promise(DocumentData(formdata), {
+        loading: "Please wait ....",
+      });
+      // if (document.size <= 1000000) {
+      // } else toast.error("file size too large");
     }
   }
 
@@ -110,7 +110,7 @@ export const UploadMode = ({ open, onClose }) => {
             <br />
             <br />
             <h2 className="ml-2 font-bold">Click to Upload</h2>
-            <p>Size:1000KB </p>
+            <p>format: pdf,images,docx,xml,doc,pptx </p>
             <label
               htmlFor="image"
               className="cursor-pointer hover:text-blue-400"

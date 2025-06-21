@@ -150,14 +150,14 @@ export async function DocumentData(Data) {
     }
 
     if (sendlog.status == 401) {
-      toast.error("login session expire");
-      window.location = "/login_user";
+      toast.error(error.message);
+      // window.location = "/login_user";
     }
   } catch (error) {
     console.log(error);
-    toast.error("login session expire");
-    const clear = localStorage.removeItem("jwtToken");
-    const clear2 = localStorage.removeItem("isLoggedIn");
+    toast.error(error.message);
+    localStorage.removeItem("jwtToken");
+    localStorage.removeItem("isLoggedIn");
   }
 }
 
