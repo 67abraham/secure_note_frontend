@@ -20,7 +20,7 @@ export const UserWork = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const response = await axios.get(
-        "http://localhost:8080/api/content/list-note",
+        `${process.env.BASE_URL_DOC}/api/content/list-note`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

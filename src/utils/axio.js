@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 export async function creatUser(userData) {
   try {
     const response = await axios.post(
-      "http://localhost:8080/user/register",
+      `${process.env.BASE_URL_DOC}/user/register`,
       userData
     );
 
@@ -33,7 +33,7 @@ export async function creatUser(userData) {
 export async function loginData(Data) {
   try {
     const response = await axios.post(
-      "http://localhost:8080/user/signin",
+      `${process.env.BASE_URL_DOC}/user/signin`,
       Data
     );
     const token = response.data;
@@ -75,7 +75,7 @@ export async function PostContent(contents) {
     const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
     const token = datatoken.jwtToken;
     const content = await axios.post(
-      "http://localhost:8080/api/content",
+      `${process.env.BASE_URL_DOC}/api/content`,
       contents,
       {
         headers: {
@@ -99,7 +99,7 @@ export async function PostContent(contents) {
 export async function VisitortorMessage(Data) {
   try {
     const sendFeedback = await axios.post(
-      "http://localhost:8080/user/feedback",
+      `${process.env.BASE_URL_DOC}/user/feedback`,
       Data
     );
 
@@ -116,7 +116,7 @@ export async function VisitortorMessage(Data) {
 export async function AdminData(Data) {
   try {
     const sendlog = await axios.post(
-      "http://localhost:8080/api/admin/login",
+      `${process.env.BASE_URL_DOC}/api/admin/login`,
       Data
     );
 
@@ -138,12 +138,16 @@ export async function DocumentData(Data) {
   try {
     const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
     const token = datatoken.jwtToken;
-    const sendlog = await axios.post("http://localhost:8080/api/doc", Data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const sendlog = await axios.post(
+      `${process.env.BASE_URL_DOC}/api/doc`,
+      Data,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
     if (sendlog.status == 200) {
       toast.success(`upload successful`);
       window.location = "/user_dashboard/upload_content";
@@ -164,7 +168,7 @@ export async function DocumentData(Data) {
 export async function resetData(Data) {
   try {
     const response = await axios.post(
-      "http://localhost:8080/user/verify_email",
+      `${process.env.BASE_URL_DOC}/user/verify_email`,
       Data
     );
 
@@ -185,7 +189,10 @@ export async function resetData(Data) {
 
 export async function resetPassData(Data) {
   try {
-    const response = await axios.post("http://localhost:8080/user/reset", Data);
+    const response = await axios.post(
+      `${process.env.BASE_URL_DOC}/user/reset`,
+      Data
+    );
 
     if (response) {
       window.location = "/reset_password/:success";

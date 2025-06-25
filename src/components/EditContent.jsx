@@ -26,7 +26,7 @@ export const EditContent = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.get(
-        `http://localhost:8080/api/content/${con_id}`,
+        `${process.env.BASE_URL_DOC}/api/content/${con_id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ export const EditContent = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.put(
-        `http://localhost:8080/api/content/${con_id}`,
+        `${process.env.BASE_URL_DOC}/api/content/${con_id}`,
         data,
         {
           headers: {

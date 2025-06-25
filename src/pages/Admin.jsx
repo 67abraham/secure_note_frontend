@@ -14,7 +14,7 @@ export const Admin = () => {
   async function sendId(id) {
     try {
       const getResponse = await axios.delete(
-        `http://localhost:8080/api/admin/${id}`
+        `${process.env.BASE_URL_DOC}/api/admin/${id}`
       );
 
       toast.success("Done");
@@ -27,7 +27,7 @@ export const Admin = () => {
   async function getAllUser() {
     try {
       const getResponse = await axios.get(
-        "http://localhost:8080/api/admin/getuser"
+        `${process.env.BASE_URL_DOC}/api/admin/getuser`
       );
 
       if (getResponse.data) {
@@ -41,7 +41,7 @@ export const Admin = () => {
   async function getAllMessage() {
     try {
       const getResponse = await axios.get(
-        "http://localhost:8080/api/admin/comment"
+        `${process.env.BASE_URL_DOC}/api/admin/comment`
       );
 
       if (getResponse.data) {

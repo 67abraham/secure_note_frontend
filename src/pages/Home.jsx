@@ -41,7 +41,6 @@ export const Home = () => {
   // scrolling image start here
   useEffect(() => {
     const scroller = document.querySelectorAll(".scroller");
-    console.log("list: " + scroller);
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       addAmination();

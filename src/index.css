@@ -414,17 +414,16 @@
 }
 
 .socialIcon {
-  display: inline-block;
+  display: block;
   margin-top: 14px;
   margin-right: 30px;
 }
 
-.socialIcon > i {
+.icon {
   display: block;
-  text-align: center;
   size: 10;
-  margin: 12px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .terms {

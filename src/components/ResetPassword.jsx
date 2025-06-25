@@ -130,7 +130,7 @@ export const Token = () => {
   async function resetData() {
     try {
       const response = await axios.get(
-        `http://localhost:8080/user/token/${id}`
+        `${process.env.BASE_URL_DOC}/user/token/${id}`
       );
 
       if (response) {

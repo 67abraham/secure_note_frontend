@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import DOMPurify from "dompurify";
 import toast, { Toaster } from "react-hot-toast";
-import { Foster } from "./Foster";
 
 export function SinglePlan() {
   const { id } = useParams();
@@ -19,7 +18,7 @@ export function SinglePlan() {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.get(
-        `http://localhost:8080/api/content/${id}`,
+        `${process.env.BASE_URL_DOC}/api/content/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -45,7 +44,7 @@ export function SinglePlan() {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const delecontent = await axios.delete(
-        `http://localhost:8080/api/content/${id}`,
+        `${process.env.BASE_URL_DOC}/api/content/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

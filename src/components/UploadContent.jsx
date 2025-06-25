@@ -14,7 +14,7 @@ export const UploadContent = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.get(
-        "http://localhost:8080/api/doc",
+        `${process.env.BASE_URL_DOC}/api/doc`,
 
         {
           headers: {
@@ -36,7 +36,7 @@ export const UploadContent = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.delete(
-        `http://localhost:8080/api/doc/${id}`,
+        `${process.env.BASE_URL_DOC}/api/doc/${id}`,
 
         {
           headers: {
