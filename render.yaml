@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: air-note
+    env: docker
+    repo: https://github.com/67abraham/secure_note_frontend.git
+    branch: master
+    dockerContext: ./
+    dockerfilePath: Dockerfile
+    plan: free
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://note-backend-by7j.onrender.com

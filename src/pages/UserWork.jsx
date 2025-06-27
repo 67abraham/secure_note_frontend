@@ -6,27 +6,22 @@ import axios, { Axios } from "axios";
 import parse from "html-react-parser";
 import toast, { Toaster } from "react-hot-toast";
 import { Foster } from "../components/Foster";
-// import { DotLottieReact } from "lottie-react/dotlottie-react";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const UserWork = () => {
   const [note, setNote] = useState([]);
   const nagivate = useNavigate();
   const [openModel, setOpenModel] = useState(false);
-  const [url, setUrl] = useState(null);
-  // const [loading, setloading] = useState("");
 
   async function getContent() {
     try {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
-      const response = await axios.get(
-        `${process.env.BASE_URL_DOC}/api/content/list-note`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.get(`${BASE_URL}/api/content/list-note`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (response) {
         setNote(response.data);
       }

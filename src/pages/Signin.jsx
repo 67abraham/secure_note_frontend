@@ -38,8 +38,6 @@ export const Signin = () => {
     }
 
     setError(errorCopy);
-    console.log(errorCopy);
-    console.log(valid);
     return valid;
   }
 
@@ -53,7 +51,6 @@ export const Signin = () => {
         error: <b>Login fail!!.</b>,
       });
     }
-    console.log(userData);
   }
 
   return (

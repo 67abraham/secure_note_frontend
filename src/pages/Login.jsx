@@ -48,7 +48,7 @@ export const Login = () => {
 
     setError(errorCopy);
     // console.log(errorCopy);
-    console.log(valid);
+
     return valid;
   }
 
@@ -61,8 +61,6 @@ export const Login = () => {
         loading: "SignUp...",
         error: <b>Email is taken.</b>,
       });
-
-      console.log(userData);
     }
 
     setError(errorCopy);

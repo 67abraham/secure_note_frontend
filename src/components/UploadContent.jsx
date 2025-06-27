@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { UploadMode } from "./Mode";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const UploadContent = () => {
   const [listDocument, setListDocument] = useState([]);
@@ -14,7 +15,7 @@ export const UploadContent = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.get(
-        `${process.env.BASE_URL_DOC}/api/doc`,
+        `${BASE_URL}/api/doc`,
 
         {
           headers: {
@@ -36,7 +37,7 @@ export const UploadContent = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.delete(
-        `${process.env.BASE_URL_DOC}/api/doc/${id}`,
+        `${BASE_URL}/api/doc/${id}`,
 
         {
           headers: {

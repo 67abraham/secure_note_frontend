@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import DOMPurify from "dompurify";
 import toast, { Toaster } from "react-hot-toast";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export function SinglePlan() {
   const { id } = useParams();
@@ -17,14 +18,11 @@ export function SinglePlan() {
     try {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
-      const content = await axios.get(
-        `${process.env.BASE_URL_DOC}/api/content/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const content = await axios.get(`${BASE_URL}/api/content/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (content.data) {
         setspa(content.data);
       }
@@ -43,14 +41,11 @@ export function SinglePlan() {
     try {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
-      const delecontent = await axios.delete(
-        `${process.env.BASE_URL_DOC}/api/content/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const delecontent = await axios.delete(`${BASE_URL}/api/content/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (delecontent.data) {
         toast.success("Delete complete");
         window.location = "/user_dashboard";

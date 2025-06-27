@@ -12,6 +12,7 @@ import Placeholder from "@tiptap/extension-placeholder";
 import { QMenu } from "./QMenu";
 import toast, { Toaster } from "react-hot-toast";
 import DOMPurify from "dompurify";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const EditContent = () => {
   const { con_id } = useParams();
@@ -25,14 +26,11 @@ export const EditContent = () => {
     try {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
-      const content = await axios.get(
-        `${process.env.BASE_URL_DOC}/api/content/${con_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const content = await axios.get(`${BASE_URL}/api/content/${con_id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (content.data) {
         setEditTitle(content.data);
         setEditCon(content.data);
@@ -57,7 +55,7 @@ export const EditContent = () => {
       const datatoken = JSON.parse(localStorage.getItem("jwtToken"));
       const token = datatoken.jwtToken;
       const content = await axios.put(
-        `${process.env.BASE_URL_DOC}/api/content/${con_id}`,
+        `${BASE_URL}/api/content/${con_id}`,
         data,
         {
           headers: {

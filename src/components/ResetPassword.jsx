@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { resetData, resetPassData } from "../utils/axio";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const VertifyEmail = () => {
   const [email, setEmail] = useState("");
@@ -129,9 +130,7 @@ export const Token = () => {
 
   async function resetData() {
     try {
-      const response = await axios.get(
-        `${process.env.BASE_URL_DOC}/user/token/${id}`
-      );
+      const response = await axios.get(`${BASE_URL}/user/token/${id}`);
 
       if (response) {
         window.location = "/reset_password";

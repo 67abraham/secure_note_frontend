@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios, { Axios } from "axios";
 import toast from "react-hot-toast";
 import { Foster } from "../components/Foster";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const Admin = () => {
   const [commet, setComment] = useState([]);
@@ -13,9 +14,7 @@ export const Admin = () => {
 
   async function sendId(id) {
     try {
-      const getResponse = await axios.delete(
-        `${process.env.BASE_URL_DOC}/api/admin/${id}`
-      );
+      const getResponse = await axios.delete(`${BASE_URL}/api/admin/${id}`);
 
       toast.success("Done");
     } catch (error) {
@@ -26,9 +25,7 @@ export const Admin = () => {
 
   async function getAllUser() {
     try {
-      const getResponse = await axios.get(
-        `${process.env.BASE_URL_DOC}/api/admin/getuser`
-      );
+      const getResponse = await axios.get(`${BASE_URL}/api/admin/getuser`);
 
       if (getResponse.data) {
         setUser(getResponse.data);
@@ -40,9 +37,7 @@ export const Admin = () => {
 
   async function getAllMessage() {
     try {
-      const getResponse = await axios.get(
-        `${process.env.BASE_URL_DOC}/api/admin/comment`
-      );
+      const getResponse = await axios.get(`${BASE_URL}/api/admin/comment`);
 
       if (getResponse.data) {
         setComment(getResponse.data);
