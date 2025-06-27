@@ -126,7 +126,7 @@ export const Message = () => {
 };
 
 export const Token = () => {
-  const id = useParams();
+  const { id } = useParams();
 
   async function resetData() {
     try {
