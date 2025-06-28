@@ -189,6 +189,7 @@ export const ResetPassword = () => {
                 type="email"
                 name="email"
                 id="email"
+                placeholder="Enter old Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="pl-10 rounded  w-full box-border h-10 p-2 mt-2 bg-gray-100 placeholder:text-gray-400 focus:outline-amber-800 outline-gray-600"
