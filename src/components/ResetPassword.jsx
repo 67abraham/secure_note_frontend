@@ -126,33 +126,6 @@ export const Message = () => {
   );
 };
 
-export const Token = () => {
-  const { idToken } = useParams();
-  // console.log("token: " + idToken);
-
-  async function resetData() {
-    try {
-      const response = await axios.get(`${BASE_URL}/user/token/${idToken}`);
-
-      if (response.data) {
-        window.location = "/reset_password";
-      } else {
-        alert("Token expired");
-        window.location = "/login_user";
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    toast.promise(resetData(), {
-      loading: "Please wait..",
-    });
-  }, []);
-  return <Toaster />;
-};
-
 export const ResetPassword = () => {
   const [password, setPassword] = useState("");
 
@@ -277,6 +250,11 @@ export const SuccessMessage = () => {
           <h2 className="text-center text-gray-600 mt-3 font-medium text-lg">
             Password Reset Successful 🎉
           </h2>
+          <Link to={"/login_user"}>
+            <h2 className="text-center text-blue-500 underline mt-3 font-medium text-[15px]">
+              Login Here
+            </h2>
+          </Link>
 
           <br />
           <form className="m-5">
