@@ -31,7 +31,6 @@ export const VertifyEmail = () => {
     e.preventDefault();
     const userData = { email };
     if (formValid()) {
-      localStorage.setItem("userName", email);
       toast.promise(resetData(userData), {
         loading: "Please Wait...",
         error: <b>Account don't exist.</b>,
@@ -128,9 +127,7 @@ export const Message = () => {
 
 export const ResetPassword = () => {
   const [password, setPassword] = useState("");
-
-  const userName = localStorage.getItem("userName");
-  const email = userName;
+  const [email, setEmail] = useState("");
 
   const [error, setError] = useState({
     email: "",
@@ -159,9 +156,9 @@ export const ResetPassword = () => {
   function handFormSubmit(e) {
     e.preventDefault();
     const userData = { email, password };
+
     if (formValid()) {
       toast.promise(resetPassData(userData), {
-        success: "Password Reset",
         loading: "Please Wait...",
         error: <b>Fail to Reset Password</b>,
       });
@@ -192,7 +189,8 @@ export const ResetPassword = () => {
                 type="email"
                 name="email"
                 id="email"
-                value={userName || " "}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 readOnly
                 className="pl-10 rounded  w-full box-border h-10 p-2 mt-2 bg-gray-100 placeholder:text-gray-400  outline-none"
               />
@@ -237,7 +235,6 @@ export const ResetPassword = () => {
 };
 
 export const SuccessMessage = () => {
-  localStorage.removeItem("userName");
   return (
     <div className="w-screen relative ">
       <div className="flex items-center justify-center">

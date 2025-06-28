@@ -15,7 +15,6 @@ import {
   Message,
   ResetPassword,
   SuccessMessage,
-  Token,
   VertifyEmail,
 } from "./components/ResetPassword";
 
