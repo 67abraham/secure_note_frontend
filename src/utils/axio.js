@@ -171,7 +171,7 @@ export async function resetPassData(Data) {
   try {
     const response = await axios.post(`${BASE_URL}/user/reset`, Data);
 
-    if (response) {
+    if (response.data) {
       window.location = "/reset_password/success";
     }
   } catch (error) {
