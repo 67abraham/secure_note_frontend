@@ -45,7 +45,7 @@ export const UploadContent = () => {
           },
         }
       );
-      if (content.status == 200) {
+      if (content.data) {
         toast.success("Done");
         window.location = "/user_dashboard/upload_content";
       }

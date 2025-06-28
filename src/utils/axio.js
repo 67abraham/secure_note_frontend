@@ -71,6 +71,7 @@ export async function PostContent(contents) {
     const content = await axios.post(`${BASE_URL}/api/content`, contents, {
       headers: {
         Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
     });
     const da = content.data;
@@ -171,9 +172,7 @@ export async function resetPassData(Data) {
     const response = await axios.post(`${BASE_URL}/user/reset`, Data);
 
     if (response) {
-      window.location = "/reset_password/:success";
-    } else {
-      toast.error("token is not coming");
+      window.location = "/reset_password/success";
     }
   } catch (error) {
     if (error.response) {

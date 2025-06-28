@@ -29,9 +29,9 @@ function App() {
       <Route path="/login_user" element={<Signin />} />
       <Route path="/verify_email" element={<VertifyEmail />} />
       <Route path="/verify_email/verify" element={<Message />} />
-      <Route path="/verify/:id" element={<Token />} />
+      <Route path="/verify/:idToken" element={<Token />} />
       <Route path="/reset_password" element={<ResetPassword />} />
-      <Route path="/reset_password/:success" element={<SuccessMessage />} />
+      <Route path="/reset_password/success" element={<SuccessMessage />} />
 
       <Route element={<ProtectedRout />}>
         <Route path="/user_dashboard" element={<UserWork />} />

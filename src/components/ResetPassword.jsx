@@ -77,7 +77,7 @@ export const VertifyEmail = () => {
               className="w-full box-border rounded h-8 bg-amber-600 font-medium size-[14px] text-white hover:bg-amber-500 cursor-pointer"
               onClick={handFormSubmit}
             >
-              Verify....
+              Verify Email
             </button>
             <p className="text-center  mt-2">
               Don't Have an Account:{" "}
@@ -107,7 +107,7 @@ export const Message = () => {
             </h1>
           </div>
           <h2 className="text-center text-gray-600 mt-3 font-medium text-lg">
-            Click Your Email to Reset Password.
+            Check Your Email to Reset Password.
           </h2>
 
           <br />
@@ -126,23 +126,20 @@ export const Message = () => {
 };
 
 export const Token = () => {
-  const { id } = useParams();
+  const { idToken } = useParams();
 
   async function resetData() {
     try {
-      const response = await axios.get(`${BASE_URL}/user/token/${id}`);
+      const response = await axios.get(`${BASE_URL}/user/token/${idToken}`);
 
       if (response) {
         window.location = "/reset_password";
       } else {
-        toast.error("token is not coming");
+        alert("Token expired");
+        window.location = "/login_user";
       }
     } catch (error) {
-      if (error.response) {
-        toast.error("Invalid Token/Token Expired");
-      } else {
-        toast.error("Network problem");
-      }
+      console.log(error.message);
     }
   }
 };
@@ -268,7 +265,7 @@ export const SuccessMessage = () => {
             </h1>
           </div>
           <h2 className="text-center text-gray-600 mt-3 font-medium text-lg">
-            Password Reset Successful.
+            Password Reset Successful 🎉
           </h2>
 
           <br />
