@@ -154,7 +154,7 @@ export async function resetData(Data) {
 
     if (response) {
       toast.success("Email Send");
-      window.location = "/verify_email/:verify";
+      window.location = "/verify_email/verify";
     } else {
       toast.error("token is not coming");
     }
