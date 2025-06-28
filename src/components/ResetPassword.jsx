@@ -127,6 +127,7 @@ export const Message = () => {
 
 export const Token = () => {
   const { idToken } = useParams();
+  // console.log("token: " + idToken);
 
   async function resetData() {
     try {
@@ -210,24 +211,25 @@ export const ResetPassword = () => {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="example@gmail.com"
-                value={userName || ""}
-                autoComplete="email"
+                value={userName || " "}
                 readOnly
-                className="pl-10 rounded  w-full box-border h-10 p-2 mt-2 bg-gray-100 placeholder:text-gray-400 focus:outline-amber-800 outline-gray-600"
+                className="pl-10 rounded  w-full box-border h-10 p-2 mt-2 bg-gray-100 placeholder:text-gray-400  outline-none"
               />
               {error.email && <div className="text-red-500">{error.email}</div>}
             </div>
             <br />
-            <label htmlFor="email" className="text-amber-500 font-medium top-4">
+            <label
+              htmlFor="password"
+              className="text-amber-500 font-medium top-4"
+            >
               Enter New Password:
             </label>
             <div className="relative">
               <input
                 type="password"
-                name="email"
-                id="email"
-                placeholder="example@gmail.com"
+                name="password"
+                id="password"
+                placeholder="password.."
                 value={password}
                 autoComplete="password"
                 onChange={(e) => setPassword(e.target.value)}
