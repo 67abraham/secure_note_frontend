@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { resetData, resetPassData } from "../utils/axio";
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+import axios from "axios";
 
 export const VertifyEmail = () => {
   const [email, setEmail] = useState("");
@@ -133,7 +134,7 @@ export const Token = () => {
     try {
       const response = await axios.get(`${BASE_URL}/user/token/${idToken}`);
 
-      if (response) {
+      if (response.data) {
         window.location = "/reset_password";
       } else {
         alert("Token expired");
