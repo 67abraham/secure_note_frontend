@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { resetData, resetPassData } from "../utils/axio";
@@ -144,6 +144,10 @@ export const Token = () => {
       console.log(error.message);
     }
   }
+
+  useEffect(() => {
+    resetData();
+  }, []);
 };
 
 export const ResetPassword = () => {
