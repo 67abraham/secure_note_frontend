@@ -136,18 +136,19 @@ export const Token = () => {
 
       if (response.data) {
         window.location = "/reset_password";
-      } else {
-        alert("Token expired");
-        window.location = "/login_user";
       }
     } catch (error) {
-      console.log(error.message);
+      alert("Token expired");
+      window.location = "/login_user";
     }
   }
 
   useEffect(() => {
-    resetData();
+    toast.promise(resetData(), {
+      loading: "Please wait..",
+    });
   }, []);
+  return <Toaster />;
 };
 
 export const ResetPassword = () => {
