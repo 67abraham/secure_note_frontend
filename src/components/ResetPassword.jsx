@@ -136,10 +136,12 @@ export const Token = () => {
 
       if (response.data) {
         window.location = "/reset_password";
+      } else {
+        alert("Token expired");
+        window.location = "/login_user";
       }
     } catch (error) {
-      alert("Token expired");
-      window.location = "/login_user";
+      console.log(error);
     }
   }
 
