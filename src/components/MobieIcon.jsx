@@ -12,10 +12,10 @@ export const MobieIcon = ({ open }) => {
         <a href="/" className="items" aria-current="page">
           Home
         </a>
-        <a href="#" className="items">
+        <a href="#about" className="items">
           About-Us
         </a>
-        <a href="#" className="items ">
+        <a href="#" className="items text-gray-500">
           Projects
         </a>
         <a href="/user_dashboard" className=" items">
@@ -45,10 +45,10 @@ export const MobieIcon2 = ({ open }) => {
         <a href="/" className="items" aria-current="page">
           Home
         </a>
-        <a href="#" className="items">
+        <a href="/" className="items">
           About-Us
         </a>
-        <a href="#" className="items ">
+        <a href="#" className="items text-gray-500">
           Projects
         </a>
         <a href="/user_dashboard" className=" items">

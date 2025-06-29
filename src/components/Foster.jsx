@@ -41,7 +41,12 @@ export const Foster = () => {
           >
             <i class="bi bi-facebook" id="ic"></i>
           </Link>
-          <Link to={"#"} className="icon">
+          <Link
+            to={
+              "https://note-documents.s3.amazonaws.com/d7283e97-233f-496c-a181-08ca45a31112.jpeg"
+            }
+            className="icon"
+          >
             <i class="bi bi-whatsapp" id="ic"></i>
           </Link>
           <Link

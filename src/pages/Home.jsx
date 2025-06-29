@@ -187,8 +187,8 @@ export const Home = () => {
             about bringing your idea to live and also believe in your concept.
             Our team, led by SWE: Abraham C. Sackie, is dedicated to Customer
             value and the value of the product to the world. We've been serving
-            multiple Businesses for over 7year, helping them achieve their goal
-            in the online world. We're constantly innovating and growing to
+            multiple Businesses for over two years, helping them achieve their
+            goal in the online world. We're constantly innovating and growing to
             provide the <b>Best out of the Best to our Customer</b>. Join us on
             our journey, and explore our Product."
           </p>

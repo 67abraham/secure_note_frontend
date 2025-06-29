@@ -39,7 +39,7 @@ export const HomeUser = () => {
             Home
           </a>
           <a
-            href="#about"
+            href="/"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
           >
             About-Us
@@ -67,7 +67,7 @@ export const HomeUser = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-6 text-white mx-2"
+                className="size-6 text-white mx-2 -mt-1.5"
               >
                 <path
                   fillRule="evenodd"
