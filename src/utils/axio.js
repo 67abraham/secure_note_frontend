@@ -168,6 +168,7 @@ export async function resetData(Data) {
 }
 
 export async function resetPassData(Data) {
+  console.log(Data);
   try {
     const response = await axios.put(`${BASE_URL}/user/reset`, Data);
     if (response.data) {

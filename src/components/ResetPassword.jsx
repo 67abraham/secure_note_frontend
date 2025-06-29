@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { resetData, resetPassData } from "../utils/axio";
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-import axios from "axios";
 
 export const VertifyEmail = () => {
   const [email, setEmail] = useState("");
@@ -249,7 +248,7 @@ export const SuccessMessage = () => {
           </h2>
           <Link to={"/login_user"}>
             <h2 className="text-center text-blue-500 underline mt-3 font-medium text-[15px]">
-              Login Here
+              Click to Login
             </h2>
           </Link>
 
