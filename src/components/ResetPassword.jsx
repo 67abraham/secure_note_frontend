@@ -237,7 +237,7 @@ export const SuccessMessage = () => {
   return (
     <div className="w-screen relative ">
       <div className="flex items-center justify-center">
-        <div className="mt-20 w-100 h-50 rounded overflow-hidden  shadow-2xl signBox">
+        <div className="mt-20 w-100 h-70 rounded overflow-hidden  shadow-2xl signBox">
           <div className="flex items-center justify-center mt-4">
             <h1 className="rounded-md text-2xl  text-amber-500 font-extrabold px-3 py-2 cursor-pointer ">
               AirNote
@@ -247,7 +247,7 @@ export const SuccessMessage = () => {
             Password Reset Successful 🎉
           </h2>
           <Link to={"/login_user"}>
-            <h2 className="text-center text-blue-500 underline mt-3 font-medium text-[15px]">
+            <h2 className="text-center text-blue-500 underline mt-3 font-medium text-[16px]">
               Click to Login
             </h2>
           </Link>
