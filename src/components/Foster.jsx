@@ -32,7 +32,7 @@ export const Foster = () => {
           </ul>
         </div>
         <div className="socialIcon">
-          <h2>Social Medial</h2>
+          <h2>Social Media</h2>
           <Link
             to={"https://www.facebook.com/aircooo"}
             target="_blank"
@@ -50,7 +50,7 @@ export const Foster = () => {
             <i class="bi bi-whatsapp" id="ic"></i>
           </Link>
           <Link
-            to={"www.youtube.com/@aircotech7864"}
+            to={"http://www.youtube.com/@aircotech7864"}
             target="_blank"
             rel="noopener noreferrer"
             className="icon"
